@@ -1,16 +1,26 @@
 # ETEC FERNANDO PRESTES EXTENSÃO FATEC
 
 ARTHUR MENDES
+
 EDUARDO YASUOKA
+
 GUSTAVO HENRIQUE
 IAN CAMPOLIM
+
 JONES HENRIQUE
+
 RICARDO GABRIEL
+
 KAYO HENRIQUE
+
 MATEUS CAMPOS
+
 THIAGO PEREIRA
+
 LEONARDO MARTINS
+
 PEDRO HENRIQUE
+
 
 # MATEMÁTICA - MATRIZ
 
@@ -115,3 +125,71 @@ Calculada como:
 ![image](https://github.com/user-attachments/assets/3500f84f-6cc1-4e2e-a584-6b1f540f7d66)
 
 Usando a fórmula do determinante da matriz das coordenadas do triângulo.
+
+
+# PARTE TECNICA
+Documentação Técnica do Código
+Estrutura HTML
+Cabeçalho (<head>)
+
+### Meta Tags:
+meta charset="UTF-8": Define a codificação de caracteres como UTF-8.
+meta name="viewport": Define que a página seja responsiva, adaptando-se a diferentes tamanhos de tela.
+
+## Título da Página: 
+(<title>): Define o título da página como "Matriz 3x3 - Determinante e Aplicações".
+
+## Bootstrap CDN:
+Foi incluído um link para o Bootstrap 5.3.3 para estilizar os elementos HTML com classes pré-definidas, como botões, tabelas e inputs.
+Estilo Customizado (<style>)
+
+## Foram aplicadas algumas customizações para melhorar a aparência da página, como:
+container-custom: Define margens, padding, cor de fundo e bordas arredondadas para o contêiner principal.
+Tabela e Inputs: O tamanho dos campos de entrada é ajustado para caber na tabela e serem centralizados.
+Botão: O botão "Calcular" ocupa 100% da largura e possui margens ajustadas.
+Resultado: O texto exibido após o cálculo tem fonte maior e está em negrito.
+Estrutura do Corpo da Página (<body>)
+Div Principal (<div class="container container-custom">)
+A página está organizada dentro de uma div principal com classes do Bootstrap e personalizações definidas em CSS. Essa div cria o layout responsivo e centralizado da aplicação.
+
+## Título e Seletor de Aplicação:
+O título da página foi definido como "Calculadora de Determinante e Aplicações", centralizado e estilizado com Bootstrap.
+O menu suspenso (<select>) permite ao usuário escolher entre quatro tipos de cálculos. O atributo onchange="toggleTermosIndependentes()" chama uma função JavaScript que altera a exibição dos termos independentes quando a Regra de Cramer é selecionada.
+Tabela de Matrizes (<table class="table table-bordered">)
+
+## A tabela: 
+foi estilizada com o Bootstrap, utilizando classes como table e table-bordered para adicionar bordas e melhorar a apresentação dos campos de entrada.
+Os campos de entrada (<input type="number">) são usados para inserir os valores da matriz 3x3. A classe form-control do Bootstrap foi aplicada a cada campo para melhorar o estilo.
+
+## Termos Independentes:
+A seção dos termos independentes (<div id="termosIndependentes" class= 'hidden" >) está inicialmente escondida. Ela é exibida dinamicamente apenas quando a Regra de Cramer é escolhida, utilizando a função toggleTermosIndependentes.
+
+## Botão "Calcular"
+O botão "Calcular" é um elemento <button> estilizado com a classe btn btn-primary do Bootstrap, que define um estilo visual padrão e interativo. Quando clicado, ele chama a função JavaScript calcular().
+
+## Resultado:
+O resultado do cálculo é exibido dentro de um div com o id resultado, que está estilizado para centralizar o texto e exibi-lo de forma clara após o cálculo.
+
+## JavaScript:
+O JavaScript é responsável pela interação e cálculos da aplicação. Aqui está uma explicação detalhada de cada função:
+
+## Função toggleTermosIndependentes()
+Essa função é chamada sempre que o usuário muda a aplicação selecionada no menu suspenso.
+Ela verifica se a opção "Regra de Cramer" foi selecionada:
+Se for, remove a classe hidden da div que contém os termos independentes, exibindo-a.
+Se não for, a div dos termos independentes é escondida novamente com a adição da classe hidden.
+
+## Função calcular():
+Esta função faz o cálculo da matriz 3x3 de acordo com a aplicação selecionada pelo usuário.
+Entrada de Dados: Lê os valores inseridos nos campos da matriz e, se a Regra de Cramer for selecionada, também lê os termos independentes (b1, b2, b3).
+
+## Lógica de Cálculo:
+Dependendo da aplicação selecionada (determinante, colinearidade, área de triângulo ou Regra de Cramer), realiza o cálculo apropriado.
+Determinante Simples: Calcula o determinante da matriz 3x3 usando a fórmula padrão.
+Colinearidade: Verifica se o determinante da matriz associada é 0 para determinar se os pontos estão alinhados.
+Área de Triângulo: Calcula a área de um triângulo usando o determinante de uma matriz específica.
+Regra de Cramer: Calcula o determinante da matriz principal (D) e os determinantes das matrizes substituídas (Dx, Dy, Dz). Em seguida, resolve o sistema linear 3x3, mostrando os valores das variáveis x, y e z.
+Exibição do Resultado: O resultado é inserido na div com id resultado e exibido ao usuário.
+
+## Conclusão: 
+Este código fornece uma solução completa para calcular determinantes de matrizes 3x3 e aplicações relacionadas. A interface amigável permite que o usuário selecione a aplicação desejada e insira os dados de forma simples, com todos os cálculos sendo feitos de maneira eficiente em JavaScript. A utilização de Bootstrap garante que a aplicação seja responsiva e visualmente agradável em diferentes dispositivos.
